@@ -1,1 +1,14 @@
+---
 #Para ejecutar la playbook se necesita tener creadas las llaves publicas y privadas
+- hosts: hosts
+  remote_user : cesar
+
+  tasks:
+    - name: Mostrar hostname del nodo
+      shell: /usr/bin/hostname
+
+    - name: Cambiar hostname nodo
+      shell: /usr/bin/hostnamectl set-hostname "prueba02.localhost"
+
+    - name: Mostrar cambio de hostname
+      shell: /usr/bin/hostname
