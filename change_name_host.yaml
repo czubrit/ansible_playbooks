@@ -1,15 +1,12 @@
 ---
-- hosts: hosts
+-
+  hosts: hosts
   remote_user: cesar
 
   tasks:
-    - name: Mostrar hostname del nodo
+    -
+      name: Mostrar hostname del nodo
       shell: /usr/bin/cat /etc/hostname
-
-    - name: Cambiar hostname nodo
-      shell: /usr/bin/hostnamectl set-hostname "prueba02.localhost"
-      become: yes
-      become_user: root
-
-    - name: Mostrar cambio de hostname
-      shell: /usr/bin/cat /etc/hostname
+    -
+      name: Mostrar cambio de hostname
+      command: ['cat','/etc/hostname']

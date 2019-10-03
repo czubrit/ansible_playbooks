@@ -1,0 +1,5 @@
+[hosts]
+192.168.150.134
+
+[hosts:vars]
+ansible_python_interpreter=/usr/bin/python3  
