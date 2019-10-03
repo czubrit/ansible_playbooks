@@ -1,12 +1,15 @@
 ---
--
-  hosts: hosts
+- hosts: hosts
   remote_user: cesar
-
+  
   tasks:
-    -
-      name: Mostrar hostname del nodo
-      shell: /usr/bin/cat /etc/hostname
-    -
-      name: Mostrar cambio de hostname
-      command: ['cat','/etc/hostname']
+  - name: Mostrar hostname del nodo
+    command: whoami
+    register: name
+  - debug: msg={{ name.stdout }}
+  
+  - name: Mostrar cambio de hostname
+    become: true
+    command: whoami
+    register: name
+  - debug: msg={{ name.stdout }}
