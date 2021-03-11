@@ -14,7 +14,7 @@
     - name: Create website index.html
       win_copy:
         content: "{{ iis_test_message }}"
-        dest: C\Inetpub\wwwroot\index.html
+        dest: C:\inetpub\wwwroot\index.html
     
     - name: Show website address
       debug:
